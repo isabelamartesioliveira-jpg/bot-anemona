@@ -186,7 +186,22 @@ bot.on("messageCreate", async (mensagem) => {
             `• \`.cor [nome-da-cor]\` — Muda a cor do seu nome (Apenas Boosters).\n` +
             `• \`.casar\`, \`.divorciar\`, \`.velorio\` — Comandos sociais do RPG.\n` +
           // ==========================================
-  // COMANDO PARA MONTAR O GUIA REVISADO NO CANAL #ANEMONA
+  if (cmd === "setup-ticket") {
+      if (!mensagem.member.permissions.has(PermissionFlagsBits.Administrator)) return;
+      await mensagem.delete().catch(() => {});
+
+      const embedPainelTicket = new EmbedBuilder()
+          .setTitle("CENTRAL DE ATENDIMENTO E SUPORTE")
+          .setDescription("Precisa de ajuda da nossa equipe de Administração ou quer fazer uma denúncia?\n\nClique no botão \"Abrir Ticket\" abaixo para iniciar um atendimento privado e individual de forma segura!")
+          .setColor("#ffb6c1")
+          .setFooter({ text: "Sistema de Suporte Oficial Anêmonas" });
+
+      const linhaBotao = new ActionRowBuilder().addComponents(
+          new ButtonBuilder().setCustomId('criar_ticket').setLabel('Abrir Ticket').setStyle(ButtonStyle.Primary)
+      );
+      return mensagem.channel.send({ embeds: [embedPainelTicket], components: [linhaBotao] });
+  }
+// COMANDO PARA MONTAR O GUIA REVISADO NO CANAL #ANEMONA
   // ==========================================
   if (cmd === "setup-guia") {
       if (!mensagem.member.permissions.has(PermissionFlagsBits.Administrator)) return;
@@ -221,23 +236,6 @@ bot.on("messageCreate", async (mensagem) => {
 
       return mensagem.channel.send({ embeds: [embedGuia] });
   }
-
-  if (cmd === "setup-ticket") {
-      if (!mensagem.member.permissions.has(PermissionFlagsBits.Administrator)) return;
-      await mensagem.delete().catch(() => {});
-
-      const embedPainelTicket = new EmbedBuilder()
-          .setTitle("CENTRAL DE ATENDIMENTO E SUPORTE")
-          .setDescription("Precisa de ajuda da nossa equipe de Administração ou quer fazer uma denúncia?\n\nClique no botão \"Abrir Ticket\" abaixo para iniciar um atendimento privado e individual de forma segura!")
-          .setColor("#ffb6c1")
-          .setFooter({ text: "Sistema de Suporte Oficial Anêmonas" });
-
-      const linhaBotao = new ActionRowBuilder().addComponents(
-          new ButtonBuilder().setCustomId('criar_ticket').setLabel('Abrir Ticket').setStyle(ButtonStyle.Primary)
-      );
-      return mensagem.channel.send({ embeds: [embedPainelTicket], components: [linhaBotao] });
-  }
-
   if (cmd === "musica") {
       const canalVoz = mensagem.member?.voice.channel;
       if (!canalVoz) return mensagem.reply("⚠️ Você precisa entrar em um canal de voz primeiro!");
