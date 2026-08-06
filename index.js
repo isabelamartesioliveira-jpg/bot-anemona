@@ -195,24 +195,26 @@ bot.on("messageCreate", async (mensagem) => {
            const embedGuia = new EmbedBuilder()
           .setTitle("Guia de Comandos — Anêmonas")
           .setDescription(`**• Laços e Separações**
+      const embedGuia = new EmbedBuilder()
+          .setTitle("Guia de Comandos — Anêmonas")
+          .setDescription(`• Laços e Separações
 .casar @nome — Pede alguém em casamento.
 .divorciar @nome — Separa e divide as panelas do casal.
 .velorio @nome — Organiza um enterro de brincadeira.
 
-**• Fotos e Perfis**
+• Fotos e Perfis
 .avatar @membro — Puxa a foto de perfil em tamanho grande.
 .banner @membro — Mostra a imagem de fundo do perfil.
 .roblox nome — Exibe a skin do boneco do Roblox.
 
-**• Bate-papo e Música**
+• Bate-papo e Música
 .musica — Toca uma música calma de fundo na sua chamada de voz.
 .oi — Dá um oi para bater um papo rápido.
 .pergunta sua dúvida — Pede opiniões ou curiosidades para o bot.
 
-Ouvir outras músicas: Jockie Music
+🎧 Ouvir outras músicas (Jockie Music):
 Entra numa sala de voz, vai no canal #cmd e digita m!play com o nome da música que quiser.`)
           .setColor("#ffb6c1");
-
 
       return mensagem.channel.send({ embeds: [embedGuia] });
   }
