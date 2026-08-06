@@ -185,11 +185,12 @@ bot.on("messageCreate", async (mensagem) => {
             `• \`.rules\` — Envia o painel de regras com o coração branco.\n` +
             `• \`.cor [nome-da-cor]\` — Muda a cor do seu nome (Apenas Boosters).\n` +
             `• \`.casar\`, \`.divorciar\`, \`.velorio\` — Comandos sociais do RPG.\n` +
-            `• \`.avatar\`, \`.banner\`, \`.roblox\`, \`.jogos\`, \`.akinator\`, \`.oi\`, \`.pergunta\n` +
+                        "• .avatar, .banner, .roblox, .jogos, .akinator, .oi, .pergunta"
         );
     }
 
-             if (cmd === "setup-guia") {
+    if (cmd === "setup-guia") {
+
       if (!mensagem.member.permissions.has(PermissionFlagsBits.Administrator)) return;
       await mensagem.delete().catch(() => {});
 
