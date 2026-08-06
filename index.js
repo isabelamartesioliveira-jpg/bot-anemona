@@ -192,22 +192,27 @@ bot.on("messageCreate", async (mensagem) => {
       if (!mensagem.member.permissions.has(PermissionFlagsBits.Administrator)) return;
       await mensagem.delete().catch(() => {});
 
-      const embedGuia = new EmbedBuilder()
+           const embedGuia = new EmbedBuilder()
           .setTitle("Guia de Comandos — Anêmonas")
-                    .setDescription(
-              "**• Laços e Separações**\n" +
-              "`.casar @nome` — Pede alguém em casamento.\n" +
-              "`.divorciar @nome` — Separa e divide as panelas do casal.\n" +
-              "`.velorio @nome` — Organiza um enterro de brincadeira.\n\n" +
+          .setDescription(`**• Laços e Separações**
+.casar @nome — Pede alguém em casamento.
+.divorciar @nome — Separa e divide as panelas do casal.
+.velorio @nome — Organiza um enterro de brincadeira.
 
-              "**• Bate-papo e Música**\n" +
-              "`.musica` — Toca uma música calma de fundo na sua chamada de voz.\n" +
-              "`.oi` — Dá um oi para bater um papo rápido.\n" +
-              "`.pergunta [sua dúvida]` — Pede opiniões ou curiosidades para o bot.\n\n" +
-              "🎧 **Ouvir outras músicas (Jockie Music):**\n" +
-              "Entra numa sala de voz, vai no canal `#cmd` e digita `m!play` com o nome da música que quiser."
-          )
+**• Fotos e Perfis**
+.avatar @membro — Puxa a foto de perfil em tamanho grande.
+.banner @membro — Mostra a imagem de fundo do perfil.
+.roblox nome — Exibe a skin do boneco do Roblox.
+
+**• Bate-papo e Música**
+.musica — Toca uma música calma de fundo na sua chamada de voz.
+.oi — Dá um oi para bater um papo rápido.
+.pergunta sua dúvida — Pede opiniões ou curiosidades para o bot.
+
+Ouvir outras músicas: Jockie Music
+Entra numa sala de voz, vai no canal #cmd e digita m!play com o nome da música que quiser.`)
           .setColor("#ffb6c1");
+
 
       return mensagem.channel.send({ embeds: [embedGuia] });
   }
