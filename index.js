@@ -397,8 +397,8 @@ Entra numa sala de voz, vai no canal #cmd e digita m!play com o nome da música 
       else { j.vidas--; if (j.vidas <= 0) { jogosForca.delete(guildId); return mensagem.reply(`Fim! Era: **${j.palavra.toUpperCase()}**.`); } mensagem.reply(`Errou! Restam: ${j.vidas} vidas.`); } 
       let pf = ''; let g = true; for (const l of j.palavra) { if (j.letrasChutadas.includes(l)) { pf += l.toUpperCase() + ' '; } else { pf += "❓ "; g = false; } } 
       if (g) { jogosForca.delete(guildId); return mensagem.channel.send(`🎉 **GANHOU!** Era **${j.palavra.toUpperCase()}**!`); } 
-      return mensagem.channel.send(`Palavra: \`${pf.trim()}\` | Tentadas: [ ${j.letrasChutadas.map(l => l.toUpperCase()).join(', ')} ]`);
-  }
+              return mensagem.channel.send(`Palavra: \`${pf.trim()}\` | Tentadas: [ ${j.letrasChutadas.map(l => l.toUpperCase()).join(', ')} ]`);
+    }
 });
 
-bot.login(MTUzMzI2OTUwMTAzMjkyNzMwMg.GTV0Qo.jsLHMqGQsda3fzqBLLxdVdAJ2zHp-r-L1qANo8);
+bot.login(process.env.DISCORD_TOKEN);
