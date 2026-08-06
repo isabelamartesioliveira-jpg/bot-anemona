@@ -194,7 +194,7 @@ bot.on("messageCreate", async (mensagem) => {
 
       const embedGuia = new EmbedBuilder()
           .setTitle("Guia de Comandos — Anêmonas")
-          .setDescription(
+                    .setDescription(
               "**• Laços e Separações**\n" +
               "`.casar @nome` — Pede alguém em casamento.\n" +
               "`.divorciar @nome` — Separa e divide as panelas do casal.\n" +
