@@ -197,8 +197,9 @@ bot.on("messageCreate", async (mensagem) => {
           .setDescription(
               "**• Laços e Separações**\n" +
               "`.casar @nome` — Pede alguém em casamento.\n" +
-              "`.divorciar @nome` — Separa e divide as panela do casal.\n" +
+              "`.divorciar @nome` — Separa e divide as panelas do casal.\n" +
               "`.velorio @nome` — Organiza um enterro de brincadeira.\n\n" +
+
               "**• Bate-papo e Música**\n" +
               "`.musica` — Toca uma música calma de fundo na sua chamada de voz.\n" +
               "`.oi` — Dá um oi para bater um papo rápido.\n" +
