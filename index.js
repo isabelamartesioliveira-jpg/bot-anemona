@@ -194,13 +194,10 @@ bot.on("messageCreate", async (mensagem) => {
 
            const embedGuia = new EmbedBuilder()
           .setTitle("Guia de Comandos — Anêmonas")
-          .setDescription(`**• Laços e Separações**
-            const embedGuia = new EmbedBuilder()
-          .setTitle("Guia de Comandos — Anêmonas")
-          .setDescription(`• Laços e Separações
+                    .setDescription(`• Laços e Separações
 .casar @nome — Pede alguém em casamento.
 .divorciar @nome — Separa e divide as panelas do casal.
-.velorio @nome — Organiza um enterro de brincadeira.`)
+.velorio @nome — Organiza um enterro de brincadeira.
 
 • Fotos e Perfis
 .avatar @membro — Puxa a foto de perfil em tamanho grande.
